@@ -1,0 +1,21 @@
+.form-error {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition:
+    grid-template-rows 0.35s ease,
+    opacity 0.3s ease,
+    transform 0.35s ease;
+}
+
+.form-error-inner {
+  overflow: hidden;
+  min-height: 0;
+}
+
+.form-error-show {
+  grid-template-rows: 1fr;
+  opacity: 1;
+  transform: translateY(0);
+}

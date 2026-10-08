@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 72">
+  <defs>
+    <linearGradient id="friendora-badge" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#00298d" />
+      <stop offset="1" stop-color="#5b8cff" />
+    </linearGradient>
+  </defs>
+  <circle cx="36" cy="36" r="30" fill="url(#friendora-badge)" />
+  <circle cx="44" cy="27" r="7.5" fill="#bcd0ff" />
+  <path d="M32 50c1.5-7 6-11 12-11s10.5 4 12 11z" fill="#bcd0ff" />
+  <circle cx="27" cy="29" r="8" fill="#ffffff" />
+  <path d="M15 52c1.5-7.5 6.5-12 12-12s10.5 4.5 12 12z" fill="#ffffff" />
+</svg>
