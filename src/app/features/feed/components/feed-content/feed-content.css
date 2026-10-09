@@ -1,0 +1,70 @@
+@property --composer-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.composer-glow {
+  position: relative;
+  isolation: isolate;
+}
+
+.composer-glow::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 22px;
+  padding: 1.5px;
+  background: conic-gradient(
+    from var(--composer-angle),
+    #003bb3,
+    #5b8cff,
+    #22d3ee,
+    #5b8cff,
+    #003bb3
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: spin-angle 5s linear infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
+@keyframes spin-angle {
+  to {
+    --composer-angle: 360deg;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .composer-glow::before {
+    animation: none;
+  }
+}
+
+/* custom privacy menu : pure CSS selection, no TS */
+.privacy-picked {
+  display: none;
+}
+
+details:has(#privacy-public:checked) .privacy-picked-public,
+details:has(#privacy-following:checked) .privacy-picked-following,
+details:has(#privacy-onlyme:checked) .privacy-picked-onlyme {
+  display: inline;
+}
+
+.privacy-check {
+  visibility: hidden;
+}
+
+.privacy-option:has(input:checked) {
+  background-color: rgb(255 255 255 / 0.15);
+  color: #fff;
+}
+
+.privacy-option:has(input:checked) .privacy-check {
+  visibility: visible;
+}
