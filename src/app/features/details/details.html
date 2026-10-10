@@ -1,0 +1,99 @@
+<!-- post details : design only -->
+<section class="mx-auto w-full max-w-3xl px-4 py-4 sm:py-6">
+  @if (postDetails._id) {
+    <article class="bg-white rounded-[16px] shadow-sm border border-slate-200 p-4 sm:p-5 font-sans">
+      <div class="flex items-center gap-3 mb-3">
+        <img
+          [src]="postDetails.user.photo"
+          class="size-10 sm:size-11 rounded-full object-cover shrink-0 bg-slate-100 border border-slate-50"
+          alt=""
+        />
+        <div class="min-w-0 flex-1">
+          <p class="text-[15px] font-bold text-slate-900 leading-tight truncate">
+            {{ postDetails.user.name }}
+          </p>
+          <p class="text-[13px] text-slate-500 mt-0.5 truncate">
+            <span> @{{ postDetails.user.username }}</span> &middot;
+            <span>{{ postDetails.createdAt }}</span> &middot; <span>{{ postDetails.privacy }}</span>
+          </p>
+        </div>
+      </div>
+      @if (postDetails.body) {
+        <p class="text-[15px] sm:text-base text-slate-900 mb-3 wrap-break-word">
+          {{ postDetails.body }}
+        </p>
+      }
+      @if (postDetails.image) {
+        <img
+          [src]="postDetails.image"
+          class="w-full h-auto max-h-[320px] sm:max-h-[560px] object-contain bg-slate-50 rounded-xl mb-3"
+          alt=""
+        />
+      }
+      <div class="flex flex-wrap items-center gap-x-4 gap-y-1 px-1 mb-3 text-[13px] text-slate-500">
+        <p>{{ postDetails.likesCount }} Like</p>
+        <p>{{ postDetails.sharesCount }} shares</p>
+        <p>{{ postDetails.commentsCount }} comments</p>
+      </div>
+      <div class="flex items-center gap-1 sm:gap-2 border-t border-slate-200 pt-2">
+        <button
+          class="flex-1 rounded-lg py-2 text-[13px] sm:text-[14px] font-semibold text-slate-600 hover:bg-slate-50 transition-colors"
+        >
+          <i class="fa-regular fa-thumbs-up me-1"></i>Like
+        </button>
+        <button
+          class="flex-1 rounded-lg py-2 text-[13px] sm:text-[14px] font-semibold text-slate-600 hover:bg-slate-50 transition-colors"
+        >
+          <i class="fa-regular fa-message me-1"></i>Comment
+        </button>
+        <button
+          class="flex-1 rounded-lg py-2 text-[13px] sm:text-[14px] font-semibold text-slate-600 hover:bg-slate-50 transition-colors"
+        >
+          <i class="fa-solid fa-share me-1"></i>share
+        </button>
+      </div>
+      <p class="font-bold text-[15px] text-slate-900 mt-4 mb-1">
+        Comments {{ postDetails.commentsCount }}
+      </p>
+
+      <!-- Create Comments  -->
+      <div class="flex gap-2 mt-4">
+        <img
+          src="https://i.pravatar.cc/150?img=11"
+          alt="Ahmed Menisy"
+          class="w-8 h-8 rounded-full object-cover shrink-0 mt-1 bg-slate-100 border border-slate-50"
+        />
+
+        <div
+          class="min-w-0 flex-1 bg-slate-100 border border-transparent shadow-sm focus-within:border-blue-300 focus-within:ring-4 focus-within:ring-blue-50 focus-within:bg-white transition-all rounded-[20px] p-2 flex flex-col"
+        >
+          <textarea
+            class="w-full bg-transparent focus:border-none border-none focus:ring-0 focus:outline-none text-base text-slate-800 placeholder-slate-500 resize-none outline-none px-2 pt-1 pb-3 min-h-[60px]"
+            placeholder="Comment as ..."
+          ></textarea>
+
+          <div class="flex items-center justify-between px-1">
+            <div class="flex items-center gap-1">
+              <input type="file" id="file" class="hidden" />
+              <label
+                for="file"
+                class="flex cursor-pointer items-center gap-2 text-slate-600 hover:bg-slate-50 px-2 py-1.5 rounded-lg transition-colors group"
+              >
+                <i
+                  class="fa-regular fa-image text-[#22c55e] text-[1.1rem] group-hover:scale-110 transition-transform"
+                ></i>
+                <span class="text-[14px] font-semibold text-slate-600">Photo/video</span>
+              </label>
+            </div>
+
+            <button
+              class="w-8 cursor-pointer h-8 rounded-full bg-gradient-to-br from-[#00298d] via-[#2456d6] to-[#5b8cff] hover:brightness-110 text-white flex items-center justify-center transition"
+            >
+              <i class="fa-solid fa-paper-plane text-[13px]"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </article>
+  }
+</section>

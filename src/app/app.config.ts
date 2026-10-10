@@ -1,13 +1,17 @@
-import { ApplicationConfig, provideBrowserGlobalErrorListeners } from '@angular/core';
+import { ApplicationConfig, importProvidersFrom, provideBrowserGlobalErrorListeners } from '@angular/core';
 import {
   provideRouter,
   withHashLocation,
   withInMemoryScrolling,
   withViewTransitions,
 } from '@angular/router';
+import { NgxSpinnerModule } from "ngx-spinner";
 
 import { routes } from './app.routes';
-import { provideHttpClient, withFetch } from '@angular/common/http';
+import { provideHttpClient, withFetch, withInterceptors } from '@angular/common/http';
+import { headerInterceptor } from './core/interceptors/header-interceptor';
+import { errorInterceptor } from './core/interceptors/error-interceptor';
+import { loadingInterceptor } from './core/interceptors/loading-interceptor';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -18,6 +22,8 @@ export const appConfig: ApplicationConfig = {
       withViewTransitions(),
       withHashLocation(),
     ),
-    provideHttpClient(withFetch()),
+    provideHttpClient(withFetch(), withInterceptors([headerInterceptor, errorInterceptor, loadingInterceptor])),
+    importProvidersFrom(NgxSpinnerModule)
+
   ],
 };

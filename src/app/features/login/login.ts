@@ -11,6 +11,7 @@ import { AuthService } from '../../core/auth/services/auth-service';
 import { Router, RouterLink } from '@angular/router';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Subscription } from 'rxjs';
+// import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-login',
@@ -23,6 +24,7 @@ export class Login {
   private readonly cdr = inject(ChangeDetectorRef);
   private readonly router = inject(Router);
   private readonly fb = inject(FormBuilder);
+  // private readonly ngxSpinnerService = inject(NgxSpinnerService);
 
   msgError: string = '';
   title: string = 'Friendora';
@@ -53,6 +55,7 @@ export class Login {
       this.loading = true;
 
       this.registerSubscribe.unsubscribe();
+// this.ngxSpinnerService.show('sample')
 
       this.registerSubscribe = this.authService.signIn(this.loginForm.value).subscribe({
         next: (res) => {
@@ -62,6 +65,7 @@ export class Login {
             localStorage.setItem('socialToken', res.data.token);
             localStorage.setItem('socialUser', JSON.stringify(res.data.user));
             this.router.navigate(['/feed']);
+// this.ngxSpinnerService.hide('sample')
             // this.router.navigateByUrl('/login')
           }
         },

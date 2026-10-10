@@ -11,6 +11,7 @@ import { ChangePassword } from './features/change-password/change-password';
 import { NotFound } from './features/not-found/not-found';
 import { authGuard } from './core/auth/guards/auth-guard';
 import { guestGuard } from './core/auth/guards/guest-guard';
+import { Details } from './features/details/details';
 
 export const routes: Routes = [
   {path : '', redirectTo : 'login' , pathMatch : 'full'},
@@ -33,6 +34,7 @@ export const routes: Routes = [
       { path: 'feed', component: Feed, title : 'TimeLine Page' },
       { path: 'notification', component: Notification, title : 'Notification Page' },
       { path: 'change-password', component: ChangePassword, title : 'ChangePassword Page' },
+      { path: 'details/:id', component: Details, title : 'Details Page' },
     ],
   },
   { path: '**', component: NotFound, title : 'NotFound Page' },

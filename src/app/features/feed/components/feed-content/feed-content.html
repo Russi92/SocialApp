@@ -1,7 +1,9 @@
 <!-- content -->
 <section>
   <!-- create post : design only -->
-  <form #resetDataForm (submit)="submitForm($event, resetDataForm)"
+  <form
+    #resetDataForm
+    (submit)="submitForm($event, resetDataForm)"
     class="composer-glow rounded-2xl sm:rounded-[22px] bg-gradient-to-br from-[#00298d] via-[#2456d6] text-white shadow-xl shadow-blue-900/30 overflow-hidden font-sans mb-4"
   >
     <div class="relative p-4 sm:p-5">
@@ -30,7 +32,8 @@
             class="relative mt-1 flex w-fit items-center gap-1.5 bg-white/10 border border-white/20 text-blue-100 rounded-full ps-2.5 pe-2 py-0.5 backdrop-blur transition-colors hover:bg-white/20"
           >
             <i class="fa-solid fa-earth-americas text-[11px]"></i>
-            <select [formControl]="privacy"
+            <select
+              [formControl]="privacy"
               aria-label="Post privacy"
               class="appearance-none border-none bg-transparent cursor-pointer text-xs font-semibold focus:outline-none focus:ring-0 py-0 px-1 [&>option]:bg-white [&>option]:text-slate-900"
             >
@@ -39,7 +42,6 @@
               <option value="only_me">only me</option>
             </select>
             <i class="fa-solid fa-chevron-down text-[9px] text-white opacity-80 ms-1"></i>
-
           </div>
         </div>
       </div>
@@ -72,9 +74,17 @@
         </div>
       }
 
-      <div class="relative flex flex-wrap items-center justify-between gap-2 border-t border-white/10 pt-3">
+      <div
+        class="relative flex flex-wrap items-center justify-between gap-2 border-t border-white/10 pt-3"
+      >
         <div class="flex items-center gap-1">
-          <input #fileInput (change)="changeImg($event)" type="file" id="create-post-file" class="hidden" />
+          <input
+            #fileInput
+            (change)="changeImg($event)"
+            type="file"
+            id="create-post-file"
+            class="hidden"
+          />
           <label
             for="create-post-file"
             class="flex cursor-pointer items-center gap-2 text-blue-100/80 hover:text-white hover:bg-white/10 px-2 sm:px-3 py-2 rounded-full transition-colors"
@@ -190,7 +200,8 @@
                   >
                     Edit post
                   </button>
-                  <button (click)="deletePostitem(post._id)"
+                  <button
+                    (click)="deletePostitem(post._id)"
                     class="inline-flex text-red-700 items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded"
                   >
                     Delete post
@@ -225,7 +236,7 @@
         <div class="flex items-center gap-3">
           <span class="cursor-pointer hover:underline">{{ post.sharesCount }} shares</span>
           <span class="cursor-pointer hover:underline">{{ post.commentsCount }} comments</span>
-          <button class="font-semibold cursor-pointer text-blue-600 hover:underline">
+          <button [routerLink]="['/details', post._id]" class="font-semibold cursor-pointer text-blue-600 hover:underline">
             View details
           </button>
         </div>
@@ -242,6 +253,7 @@
           Like
         </button>
         <button
+          #el
           class="flex-1 flex cursor-pointer items-center justify-center gap-2 text-slate-600 font-semibold text-[14px] hover:bg-slate-50 py-2 rounded-lg transition-colors"
         >
           <i class="fa-regular fa-message text-lg"></i>
@@ -256,8 +268,9 @@
       </div>
 
       <hr class="border-t border-slate-200 mt-1 mb-4" />
-
-      <app-comments-post [postId]="post._id"></app-comments-post>
+      @defer (on interaction(el)) {
+        <app-comments-post [postId]="post._id"></app-comments-post>
+      }
     </div>
   }
 </section>

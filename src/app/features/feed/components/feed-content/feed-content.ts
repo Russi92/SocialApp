@@ -3,14 +3,16 @@ import { Posts } from '../../../../core/services/posts';
 import { PostInterface } from '../../../../core/models/post-interface';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { CommentsPost } from './components/comments-post/comments-post';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-feed-content',
-  imports: [ReactiveFormsModule, CommentsPost],
+  imports: [ReactiveFormsModule, CommentsPost, RouterLink],
   templateUrl: './feed-content.html',
   styleUrl: './feed-content.css',
 })
 export class FeedContent implements OnInit {
+
   private readonly posts = inject(Posts);
   private readonly cdr = inject(ChangeDetectorRef);
   content: FormControl = new FormControl('');

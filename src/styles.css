@@ -4,6 +4,7 @@
 @import 'tailwindcss';
 /* framework tailwind css */
 
+
 /* flowbite components free angular */
 @import 'flowbite/src/themes/default';
 @plugin "flowbite/plugin";

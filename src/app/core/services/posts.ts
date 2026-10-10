@@ -8,25 +8,21 @@ import { environment } from '../../../environments/environment';
 })
 export class Posts {
   private readonly httpClient = inject(HttpClient);
-  header: object = {
-    headers: {
-      AUTHORIZATION: `Bearer ${localStorage.getItem('socialToken')}`,
-    },
-  };
+
 
   getAllPosts(): Observable<any> {
-    return this.httpClient.get(`${environment.baseUrl}/posts`, this.header);
+    return this.httpClient.get(`${environment.baseUrl}/posts`);
   }
 
   createPosts(data: object): Observable<any> {
-    return this.httpClient.post(`${environment.baseUrl}/posts`, data, this.header);
+    return this.httpClient.post(`${environment.baseUrl}/posts`, data);
   }
 
   getSinglePost(postId: string): Observable<any> {
-    return this.httpClient.get(`${environment.baseUrl}/posts/${postId}`, this.header);
+    return this.httpClient.get(`${environment.baseUrl}/posts/${postId}`);
   }
 
   deletePost(postId: string): Observable<any> {
-    return this.httpClient.delete(`${environment.baseUrl}/posts/${postId}`, this.header);
+    return this.httpClient.delete(`${environment.baseUrl}/posts/${postId}`);
   }
 }
