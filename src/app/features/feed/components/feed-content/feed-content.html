@@ -2,7 +2,7 @@
 <section>
   <!-- create post : design only -->
   <form #resetDataForm (submit)="submitForm($event, resetDataForm)"
-    class="composer-glow rounded-[22px] bg-gradient-to-br from-[#00298d] via-[#2456d6] text-white shadow-xl shadow-blue-900/30 overflow-hidden font-sans mb-4"
+    class="composer-glow rounded-2xl sm:rounded-[22px] bg-gradient-to-br from-[#00298d] via-[#2456d6] text-white shadow-xl shadow-blue-900/30 overflow-hidden font-sans mb-4"
   >
     <div class="relative p-4 sm:p-5">
       <div
@@ -12,12 +12,12 @@
         class="absolute -bottom-20 -left-10 h-56 w-56 rounded-full bg-blue-400/20 blur-3xl pointer-events-none"
       ></div>
 
-      <div class="relative flex items-center gap-3 mb-2">
+      <div class="relative flex items-center gap-2 sm:gap-3 mb-2">
         <div class="relative shrink-0">
           <img
             src="https://i.pravatar.cc/150?img=11"
             alt="Ahmed Menisy"
-            class="w-12 h-12 rounded-full object-cover bg-white/20 ring-2 ring-cyan-300/70"
+            class="w-10 h-10 sm:w-12 sm:h-12 rounded-full object-cover bg-white/20 ring-2 ring-cyan-300/70"
           />
           <span
             class="absolute bottom-0 right-0 w-4 h-4 bg-green-400 border-2 border-[#2456d6] rounded-full"
@@ -48,7 +48,7 @@
         <textarea
           [formControl]="content"
           rows="3"
-          class="w-full bg-transparent border-none resize-none p-1 text-[17px] text-white placeholder-blue-200/50 focus:outline-none focus:ring-0 caret-white"
+          class="w-full bg-transparent border-none resize-none p-1 text-[15px] sm:text-[17px] text-white placeholder-blue-200/50 focus:outline-none focus:ring-0 caret-white"
           placeholder="Create New Post...?"
           aria-label="Create a new post"
         ></textarea>
@@ -72,12 +72,12 @@
         </div>
       }
 
-      <div class="relative flex items-center justify-between gap-2 border-t border-white/10 pt-3">
+      <div class="relative flex flex-wrap items-center justify-between gap-2 border-t border-white/10 pt-3">
         <div class="flex items-center gap-1">
           <input #fileInput (change)="changeImg($event)" type="file" id="create-post-file" class="hidden" />
           <label
             for="create-post-file"
-            class="flex cursor-pointer items-center gap-2 text-blue-100/80 hover:text-white hover:bg-white/10 px-3 py-2 rounded-full transition-colors"
+            class="flex cursor-pointer items-center gap-2 text-blue-100/80 hover:text-white hover:bg-white/10 px-2 sm:px-3 py-2 rounded-full transition-colors"
           >
             <i class="fa-regular fa-image text-emerald-300 text-lg"></i>
             <span class="text-[13px] font-semibold hidden sm:inline">Photo/video</span>
@@ -86,7 +86,7 @@
 
         <button
           type="submit"
-          class="cursor-pointer bg-white text-[#00298d] px-6 py-2.5 rounded-full font-black text-sm flex items-center gap-2 shadow-lg shadow-black/25 hover:scale-[1.03] active:scale-95 transition-transform"
+          class="cursor-pointer bg-white text-[#00298d] px-5 sm:px-6 py-2 sm:py-2.5 rounded-full font-black text-[13px] sm:text-sm flex items-center gap-2 shadow-lg shadow-black/25 hover:scale-[1.03] active:scale-95 transition-transform"
         >
           Post
           <i class="fa-solid fa-paper-plane"></i>

@@ -45,6 +45,12 @@
   }
 }
 
+@media (max-width: 639px) {
+  .composer-glow::before {
+    border-radius: 16px;
+  }
+}
+
 /* custom privacy menu : pure CSS selection, no TS */
 .privacy-picked {
   display: none;
