@@ -216,11 +216,14 @@
       <!-- post content  -->
       <div class="text-[15px] text-slate-900 mb-4">
         @if (post.body) {
-          <p>{{ post.body }}</p>
+          <p class="text-[15px] sm:text-base text-slate-900 mb-3 wrap-break-word">{{ post.body }}</p>
         }
         @if (post.image) {
-          <img [src]="post.image" class="w-full max-h-90 object-cover rounded shadow mt-2" alt="" />
-        }
+<div class="w-full max-w-full h-64 sm:h-80 lg:h-[420px] overflow-hidden rounded-xl shadow mt-2 bg-slate-100">
+
+  <img [src]="post.image" class="w-full h-full" alt="" />
+</div>
+}
       </div>
 
       <!-- like share comments  counts & view details -->
