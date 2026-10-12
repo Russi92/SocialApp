@@ -11,11 +11,13 @@ import { AuthService } from '../../core/auth/services/auth-service';
 import { Router, RouterLink } from '@angular/router';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Subscription } from 'rxjs';
+import { TranslatePipe } from '@ngx-translate/core';
+import { BtnLang } from '../../shared/ui/btn-lang/btn-lang';
 // import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-login',
-  imports: [ReactiveFormsModule, RouterLink],
+  imports: [ReactiveFormsModule, RouterLink, TranslatePipe, BtnLang],
   templateUrl: './login.html',
   styleUrl: './login.css',
 })

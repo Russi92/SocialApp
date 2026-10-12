@@ -1,0 +1,57 @@
+
+{
+  "brand": {
+    "title": "فريندورا",
+    "tagline_first": "مكان واحد.",
+    "tagline_second": "لحظاتك.",
+    "tagline_third": "أشخاصك.",
+    "tagline_sub": "تواصل، شارك، وكن جزءاً من المجتمع في ثوانٍ.",
+    "member_alt": "عضو فريندورا",
+    "copyright": "  تم الإنشاء بواسطة المهندس/ محمد حسن. جميع الحقوق محفوظة."
+  },
+  "login": {
+    "heading_prefix": "تسجيل الدخول إلى",
+    "welcome_back": "أهلاً بعودتك. دائرتك افتقدتك.",
+    "field_login": "اسم المستخدم أو البريد الإلكتروني",
+    "field_password": "كلمة المرور",
+    "btn_submit": "تسجيل الدخول",
+    "link_register": "إنشاء حساب جديد",
+    "logo_alt": "فريندورا"
+  },
+  "validation": {
+    "login_required": "البريد الإلكتروني أو اسم المستخدم مطلوب",
+    "login_minlength": "يجب أن يكون 3 أحرف على الأقل!",
+    "password_required": "كلمة المرور مطلوبة",
+    "password_pattern": "يجب أن تحتوي على 10 أحرف على الأقل، حرف كبير، حرف صغير، رقم، ورمز خاص واحد.",
+    "danger_sr": "خطر"
+  },
+  "register": {
+    "title_prefix": "أنشئ حسابك",
+    "tagline": "أشخاصك. لحظاتك. مكان واحد.",
+    "full_name": "الاسم بالكامل",
+    "username": "اسم المستخدم (اختياري)",
+    "email": "البريد الإلكتروني",
+    "gender": "اختر النوع",
+    "male": "ذكر",
+    "female": "أنثى",
+    "date_of_birth": "اختر تاريخ الميلاد",
+    "password": "كلمة المرور",
+    "confirm_password": "تأكيد كلمة المرور",
+    "btn_submit": "إنشاء حساب جديد",
+    "link_login": "لديك حساب بالفعل؟ تسجيل الدخول",
+    "logo_alt": "فريندورا",
+    "validation": {
+      "full_name_required": "الاسم بالكامل مطلوب!",
+      "full_name_minlength": "يجب ألا يقل الاسم عن 3 أحرف",
+      "email_required": "البريد الإلكتروني مطلوب",
+      "email_invalid": "من فضلك أدخل بريدًا إلكترونيًا صحيحًا!",
+      "gender_required": "النوع مطلوب",
+      "date_required": "تاريخ الميلاد مطلوب",
+      "password_required": "كلمة المرور مطلوبة",
+      "password_pattern": "يجب أن تحتوي كلمة المرور على 10 أحرف على الأقل، وحرف كبير، وحرف صغير، ورقم، ورمز خاص واحد.",
+      "confirm_password_required": "تأكيد كلمة المرور مطلوب",
+      "password_mismatch": "كلمتا المرور غير متطابقتين"
+    }
+  }
+}
+

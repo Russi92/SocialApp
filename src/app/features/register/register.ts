@@ -10,10 +10,13 @@ import { AuthService } from '../../core/auth/services/auth-service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Subscription } from 'rxjs';
 import { Router, RouterLink } from '@angular/router';
+import { TranslatePipe } from '@ngx-translate/core';
+import { BtnLang } from '../../shared/ui/btn-lang/btn-lang';
+
 
 @Component({
   selector: 'app-register',
-  imports: [ReactiveFormsModule, RouterLink],
+  imports: [ReactiveFormsModule, RouterLink, TranslatePipe, BtnLang],
   templateUrl: './register.html',
   styleUrl: './register.css',
 })

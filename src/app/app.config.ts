@@ -1,16 +1,22 @@
-import { ApplicationConfig, importProvidersFrom, provideBrowserGlobalErrorListeners } from '@angular/core';
+import {
+  ApplicationConfig,
+  importProvidersFrom,
+  provideBrowserGlobalErrorListeners,
+} from '@angular/core';
 import {
   provideRouter,
   withHashLocation,
   withInMemoryScrolling,
   withViewTransitions,
 } from '@angular/router';
-import { NgxSpinnerModule } from "ngx-spinner";
+import { NgxSpinnerModule } from 'ngx-spinner';
 
-import { routes } from './app.routes';
 import { provideHttpClient, withFetch, withInterceptors } from '@angular/common/http';
-import { headerInterceptor } from './core/interceptors/header-interceptor';
+import { provideTranslateService } from '@ngx-translate/core';
+import { provideTranslateHttpLoader } from '@ngx-translate/http-loader';
+import { routes } from './app.routes';
 import { errorInterceptor } from './core/interceptors/error-interceptor';
+import { headerInterceptor } from './core/interceptors/header-interceptor';
 import { loadingInterceptor } from './core/interceptors/loading-interceptor';
 
 export const appConfig: ApplicationConfig = {
@@ -22,8 +28,19 @@ export const appConfig: ApplicationConfig = {
       withViewTransitions(),
       withHashLocation(),
     ),
-    provideHttpClient(withFetch(), withInterceptors([headerInterceptor, errorInterceptor, loadingInterceptor])),
-    importProvidersFrom(NgxSpinnerModule)
+    provideHttpClient(
+      withFetch(),
+      withInterceptors([headerInterceptor, errorInterceptor, loadingInterceptor]),
+    ),
+    importProvidersFrom(NgxSpinnerModule),
 
+    provideTranslateService({
+      loader: provideTranslateHttpLoader({
+        prefix: '/assets/i18n/',
+        suffix: '.json',
+      }),
+      fallbackLang: 'en',
+      lang: 'en',
+    }),
   ],
 };

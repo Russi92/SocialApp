@@ -1,0 +1,56 @@
+{
+  "brand": {
+    "title": "Friendora",
+    "tagline_first": "Your people.",
+    "tagline_second": "Your moments. ",
+    "tagline_third": "One place.",
+    "tagline_sub": "Connect, share, and belong in seconds.",
+    "member_alt": "Friendora member",
+    "copyright": " Make By ENG. Mohamed Hassan All rights reserved."
+  },
+  "login": {
+    "heading_prefix": "Log in to",
+    "welcome_back": "Welcome back. Your circle missed you.",
+    "field_login": "username or email",
+    "field_password": "Password",
+    "btn_submit": "Login",
+    "link_register": "Create New Account",
+    "logo_alt": "friendora"
+  },
+  "validation": {
+    "login_required": "Email or user name is required",
+    "login_minlength": "Must be at least 3 characters!",
+    "password_required": "Password is required",
+    "password_pattern": "Must contain at least 10 chars, 1 uppercase, 1 lowercase, 1 number, and 1 special chars.",
+    "danger_sr": "Danger"
+  },
+
+  "register": {
+    "title_prefix": "Create your account",
+    "tagline": "Your people. Your moments. One place.",
+    "full_name": "Full Name",
+    "username": "User Name (optional)",
+    "email": "Email",
+    "gender": "Select Gender",
+    "male": "Male",
+    "female": "Female",
+    "date_of_birth": "Select Date",
+    "password": "Password",
+    "confirm_password": "Confirm Password",
+    "btn_submit": "Create New Account",
+    "link_login": "I already have an account",
+    "logo_alt": "Friendora",
+    "validation": {
+      "full_name_required": "Full Name is required!",
+      "full_name_minlength": "At least 3 characters",
+      "email_required": "Email is required",
+      "email_invalid": "Please enter a valid email address!",
+      "gender_required": "Gender is required",
+      "date_required": "Date of birthday is required",
+      "password_required": "Password is required",
+      "password_pattern": "Must contain at least 10 chars, 1 uppercase, 1 lowercase, 1 number, and 1 special chars.",
+      "confirm_password_required": "Confirm Password is required",
+      "password_mismatch": "Passwords do not match"
+    }
+  }
+}
